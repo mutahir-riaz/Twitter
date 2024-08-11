@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
 
 const generateToken = (userId) => {
-    return jwt.sign({ id: userId }, "e298d3489d3jfruuf8r9dejncnjeiuein328cdjnwj", { expiresIn: '1h' });
+    return jwt.sign({ id: userId }, process.env.JwtCode, { expiresIn: '1h' });
 };
 
 const verifyToken = (token) => {
-    return jwt.verify(token, "e298d3489d3jfruuf8r9dejncnjeiuein328cdjnwj");
+    return jwt.verify(token, process.env.JwtCode);
 };
 
 module.exports = { generateToken, verifyToken };
