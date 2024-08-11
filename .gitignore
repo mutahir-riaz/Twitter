@@ -3,3 +3,6 @@ config
 .env
 controller
 middleware
+package-lock.json
+chat.js
+index.html
